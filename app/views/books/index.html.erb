@@ -23,9 +23,9 @@
         <td><img src="<%= book.visual %>" alt="" class="img-responsive"></td>
         <td><%= book.name %></td>
         <td><%= book.author %></td>
-        <td><%= book.price %></td>
+        <td><%= number_to_currency(book.price, unit:'¥', precision: 0) %></td>
         <td><%= book.publisher %></td>
-        <td><%= book.release_date %></td>
+        <td><%= book.release_date.strftime('%Y年 %m月') %></td>
         <td><%= book.isbn_code %></td>
         <td><%= link_to "閲覧", book, class:"btn btn-info btn-sm" %></td>
         <td><%= link_to "編集", edit_book_path(book), class:"btn btn-success btn-sm" %></td>
